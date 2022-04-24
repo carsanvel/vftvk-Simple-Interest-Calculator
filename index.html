@@ -1,16 +1,31 @@
+<!DOCTYPE html>
 <html>
     <head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <title>Web App Simple Interest Calculator</title>
     </head>
     <body>
+	<div id="box">
         <h1>Simple Interest Calculator</h1>
+	<div id="data">
+        <div class="input"><label for="principal">Amount</label> <input type="number"  id="principal"></input></div>  <br/>
+        <div class="input"><label for="rate">Interest Rate</label><input type="range"  id="rate" max="21" step="0.5" oninput="show_percentage()"></input>  <span id="range_value"></span></div><br/>
+	<script>document.getElementById("range_value").innerHTML = document.getElementById("rate").value + "%";</script>
+        <div class="input"><label for="years">No. of Years</label><select id="years">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select> </div><br/> 
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+	<div class="input"><button onclick="compute()">Compute Interest</button></div><br/>
+        <div id="result"></div>
+	</div>
+	<h4>© Everyone Can Get Rich</h4>
+	</div>
 
-        <button onclick="compute()">Compute</button>
+	
     </body>
 </html>
